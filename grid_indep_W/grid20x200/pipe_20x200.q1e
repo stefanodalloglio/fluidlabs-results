@@ -219,7 +219,7 @@ TALK=T;RUN(1,1)
   Group 14. Downstream Pressure For PARAB
  ************************************************************
   Group 15. Terminate Sweeps
- LSWEEP = 1000 ;ISWC1 = 1
+ LSWEEP = 2000 ;ISWC1 = 1
  LITHYD = 1 ;LITFLX = 1 ;LITC = 1 ;ITHC1 = 1
  SELREF = T
  RESFAC =1.0E-05
