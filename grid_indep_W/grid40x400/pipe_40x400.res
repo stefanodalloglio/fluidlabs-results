@@ -436,9 +436,9 @@
  
  ************************************************************
  SATLIT RUN NUMBER =   1 ; LIBRARY REF.=    0
- Run started at 07:00:01 on Monday, 17 November 2025                           
- Run completed at 07:01:22 on Monday, 17 November 2025                         
- CPU time of run 82 s
- This includes 82 seconds of user time and 0 seconds of system time.
- TIME/(VARIABLES*CELLS*TSTEPS*SWEEPS*ITS) = 6.530E-07
+ Run started at 07:42:11 on Monday, 17 November 2025                           
+ Run completed at 07:43:32 on Monday, 17 November 2025                         
+ CPU time of run 83 s
+ This includes 83 seconds of user time and 0 seconds of system time.
+ TIME/(VARIABLES*CELLS*TSTEPS*SWEEPS*ITS) = 6.610E-07
  ************************************************************
