@@ -25,7 +25,7 @@ TALK=T;RUN(1,1)
  ************************************************************
   Group 4. Y-Direction Grid Spacing
  NY = 15
- YVLAST =0.1
+ YVLAST =0.05
  YFRAC(1)=0.066667 ;YFRAC(2)=0.133333
  YFRAC(3)=0.2 ;YFRAC(4)=0.266667
  YFRAC(5)=0.333333 ;YFRAC(6)=0.4
@@ -253,7 +253,7 @@ TALK=T;RUN(1,1)
   Group 11.Initial field variables (PHIs)
  FIINIT(P1)=0. ;FIINIT(V1)=1.0E-10
  FIINIT(W1)=1.0E-10 ;FIINIT(KE)=5.625E-17
- FIINIT(EP)=6.932316E-24 ;FIINIT(ENUT)=1.0E-10
+ FIINIT(EP)=1.386463E-23 ;FIINIT(ENUT)=1.0E-10
  FIINIT(YPLS)=1.0E-10 ;FIINIT(STRS)=1.0E-10
  FIINIT(DEN1)=1.0E-10 ;FIINIT(EPKE)=1.0E-10
  FIINIT(DWDY)=1.0E-10
@@ -278,7 +278,7 @@ TALK=T;RUN(1,1)
  COVAL(^OB1 ,V1 ,0. ,0. )
  COVAL(^OB1 ,W1 ,0. ,0.75 )
  COVAL(^OB1 ,KE ,0. ,5.625E-17 )
- COVAL(^OB1 ,EP ,0. ,6.932316E-24 )
+ COVAL(^OB1 ,EP ,0. ,1.386463E-23 )
  
  PATCH(^OB2 ,HIGH , 2, 0, 0, 0, 0, 0, 1, 1)
  COVAL(^OB2 ,P1 ,1000. ,0. )
@@ -376,7 +376,7 @@ TALK=T;RUN(1,1)
  OUTPUT(DWDY,N,N,Y,N,N,N)
  ************************************************************
   Group 22. Monitor Print-Out
- IXMON = 1 ;IYMON = 7 ;IZMON = 19
+ IXMON = 1 ;IYMON = 13 ;IZMON = 19
  NPRMON = 100000 ;NPRMNT = 1 ;TSTSWP = -1
  UWATCH = T ;USTEER = T
  HIGHLO = F

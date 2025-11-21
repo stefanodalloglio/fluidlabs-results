@@ -49,10 +49,10 @@
  ************************************************************
  biggest cell volume divided by average is     1.93343093337999       at:
  ix = 1 iy = 15 iz = 197
- xg =0.26 yg =0.096667 zg =9.825001
+ xg =0.26 yg =0.048333 zg =9.825001
  smallest cell volume divided by average is   6.666400666639903E-002  at:
  ix = 1 iy = 1 iz = 180
- xg =0.26 yg =3.333334E-03 zg =8.975001
+ xg =0.26 yg =1.666667E-03 zg =8.975001
  ratio of smallest to biggest is   3.447964213019922E-002
  ************************************************************
  
@@ -91,7 +91,7 @@
  ************************************************************
   Group 4. Y-Direction Grid Spacing
  NY = 15
- YVLAST =0.1
+ YVLAST =0.05
  YFRAC(1)=0.066667 ;YFRAC(4)=0.266667
  YFRAC(7)=0.466667 ;YFRAC(10)=0.666667
  YFRAC(13)=0.866667
@@ -167,7 +167,7 @@
   Group 11.Initial field variables (PHIs)
  FIINIT(P1)=0. ;FIINIT(V1)=1.0E-10
  FIINIT(W1)=1.0E-10 ;FIINIT(KE)=5.625E-17
- FIINIT(EP)=6.932316E-24 ;FIINIT(ENUT)=1.0E-10
+ FIINIT(EP)=1.386463E-23 ;FIINIT(ENUT)=1.0E-10
  FIINIT(YPLS)=1.0E-10 ;FIINIT(STRS)=1.0E-10
  FIINIT(DEN1)=998.23 ;FIINIT(EPKE)=1.0E-10
  FIINIT(DWDY)=1.0E-10
@@ -189,7 +189,7 @@
  COVAL(OB1 ,V1 ,0. ,0. )
  COVAL(OB1 ,W1 ,0. ,0.75 )
  COVAL(OB1 ,KE ,0. ,5.625E-17 )
- COVAL(OB1 ,EP ,0. ,6.932316E-24 )
+ COVAL(OB1 ,EP ,0. ,1.386463E-23 )
  
    Parent VR object for this patch is: OUTL2         
  PATCH(OB2 ,HIGH , 1, 1, 1, 15, 300, 300, 1, 1)
@@ -294,7 +294,7 @@
  WALPRN = T
  ************************************************************
   Group 22. Monitor Print-Out
- IXMON = 1 ;IYMON = 7 ;IZMON = 19
+ IXMON = 1 ;IYMON = 13 ;IZMON = 19
  NPRMON = 100000 ;NPRMNT = 1 ;TSTSWP = 10001
  UWATCH = F ;USTEER = F
  HIGHLO = F
@@ -320,7 +320,7 @@
  X-coordinates of the cell centres
     2.600E-01
  Y-coordinates of the cell centres
-    3.333E-03   2.333E-02   4.333E-02   6.333E-02   8.333E-02
+    1.667E-03   1.167E-02   2.167E-02   3.167E-02   4.167E-02
 
  Z-coordinates of the cell centres
     2.500E-02   3.025E+00   6.025E+00   9.025E+00   1.203E+01
@@ -329,7 +329,7 @@
  X-coordinates of the (higher) cell faces
     5.200E-01
  Y-coordinates of the (higher) cell faces
-    6.667E-03   2.667E-02   4.667E-02   6.667E-02   8.667E-02
+    3.333E-03   1.333E-02   2.333E-02   3.333E-02   4.333E-02
 
  Z-coordinates of the (higher) cell faces
     5.000E-02   3.050E+00   6.050E+00   9.050E+00   1.205E+01
@@ -339,30 +339,30 @@
  --- INTEGRATION OF EQUATIONS BEGINS ---
  
  ************************************************************
- Run ending on sweep  1056 with all residuals below RESFAC ( 1.000000E-05)
+ Run ending on sweep   716 with all residuals below RESFAC ( 1.000000E-05)
  ************************************************************
- *** End of sweep 1057
+ *** End of sweep 717
  ************************************************************
  
  ************************************************************
- Whole-field residuals before solution at sweep 1057
+ Whole-field residuals before solution at sweep 717
  with resref values determined by EARTH
  & resfac=1.0E-05
   variable   resref  (res sum)/resref  (res sum)
-     P1     3.969E+00   1.779E-10      7.060E-10
-     V1     4.188E+00   4.096E-07      1.715E-06
-     W1     4.188E+00   9.621E-06      4.029E-05
-     KE     2.456E-01   2.292E-06      5.628E-07
-     EP     8.908E-01   6.985E-07      6.222E-07
+     P1     9.939E-01   3.209E-11      3.190E-11
+     V1     1.438E+00   1.580E-07      2.273E-07
+     W1     1.438E+00   9.598E-06      1.381E-05
+     KE     1.568E-01   2.025E-06      3.174E-07
+     EP     1.200E+00   5.987E-07      7.185E-07
  
  max abs corrections for solved-for variables
  for comparison with maximum & minimum values
   variable   max-cor      high           low     (   IX    IY    IZ)
-     P1     2.855E-05   3.582E+02      5.783E-01 (    1,   15,  279)
-     V1     1.641E-08   9.818E-04     -2.096E-03 (    1,    7,  277)
-     W1     8.650E-07   9.165E-01      5.583E-01 (    1,    1,  299)
-     KE     1.189E-08   6.012E-03      1.000E-10 (    1,    7,  272)
-     EP     1.454E-08   5.604E-02      1.000E-10 (    1,   11,  300)
+     P1     9.411E-05   8.119E+02      5.816E-01 (    1,   15,  214)
+     V1     4.339E-09   1.593E-03     -2.421E-03 (    1,    7,  165)
+     W1     2.996E-07   9.274E-01      5.439E-01 (    1,    1,  186)
+     KE     9.483E-09   6.873E-03      1.000E-10 (    1,    6,  207)
+     EP     1.602E-08   1.370E-01      1.000E-10 (    1,    9,  196)
  
  
  ************************************************************
@@ -377,68 +377,65 @@
         R1       - Mass   - kg/s
         TEM1,H1  - Energy - Watts
  
- Nett source of V1   at patch named: OB2      (OUTL2       ) =-8.000267E-04
- pos. sum=0. neg. sum=-8.000267E-04
- nett sum=-8.000267E-04
+ Nett source of V1   at patch named: OB2      (OUTL2       ) =-3.576954E-04
+ pos. sum=0. neg. sum=-3.576954E-04
+ nett sum=-3.576954E-04
  
- Nett source of W1   at patch named: OB1      (INLE1       ) = 1.459904E+00
- Nett source of W1   at patch named: OB2      (OUTL2       ) =-1.480871E+00
- Nett source of W1   at patch named: OB3      (PLAT3       ) =-9.063797E-01
- pos. sum=1.459904 neg. sum=-2.387251
- nett sum=-0.927347
+ Nett source of W1   at patch named: OB1      (INLE1       ) = 3.649760E-01
+ Nett source of W1   at patch named: OB2      (OUTL2       ) =-3.707487E-01
+ Nett source of W1   at patch named: OB3      (PLAT3       ) =-5.210236E-01
+ pos. sum=0.364976 neg. sum=-0.891772
+ nett sum=-0.526796
  
- Nett source of R1   at patch named: OB1      (INLE1       ) = 1.946539E+00
- Nett source of R1   at patch named: OB2      (OUTL2       ) =-1.946539E+00 (Mass Out -1.946539E+00 In 0.000000E+00)
- pos. sum=1.946539 neg. sum=-1.946539
- nett sum=-2.220446E-16
+ Nett source of R1   at patch named: OB1      (INLE1       ) = 4.866346E-01
+ Nett source of R1   at patch named: OB2      (OUTL2       ) =-4.866346E-01 (Mass Out -4.866346E-01 In 0.000000E+00)
+ pos. sum=0.486635 neg. sum=-0.486635
+ nett sum=-2.609024E-15
  
- Nett source of KE   at patch named: OB1      (INLE1       ) = 1.094928E-16 (Average  5.625000E-17)
- Nett source of KE   at patch named: OB2      (OUTL2       ) =-5.246435E-03 (Ave Out  2.695266E-03 In  0.000000E+00)
- Nett source of KE   at patch named: OB3      (PLAT3       ) =-1.438712E-14
- Nett source of KE   at patch named: KESOURCE                =-1.182624E-01
- Non-linearised source for KE    at: KESOURCE                = 1.202570E-01
- pos. sum=0.120257 neg. sum=-0.123509
- nett sum=-3.251875E-03
+ Nett source of KE   at patch named: OB1      (INLE1       ) = 2.737320E-17 (Average  5.625000E-17)
+ Nett source of KE   at patch named: OB2      (OUTL2       ) =-1.507388E-03 (Ave Out  3.097580E-03 In  0.000000E+00)
+ Nett source of KE   at patch named: OB3      (PLAT3       ) =-1.077077E-14
+ Nett source of KE   at patch named: KESOURCE                =-7.689062E-02
+ Non-linearised source for KE    at: KESOURCE                = 7.683629E-02
+ pos. sum=0.076836 neg. sum=-0.078398
+ nett sum=-1.561715E-03
  
- Nett source of EP   at patch named: OB1      (INLE1       ) = 1.349402E-23 (Average  6.932316E-24)
- Nett source of EP   at patch named: OB2      (OUTL2       ) =-1.184623E-02 (Ave Out  6.085796E-03 In  0.000000E+00)
- Nett source of EP   at patch named: OB3      (PLAT3       ) =-1.641660E-13
- Nett source of EP   at patch named: KESOURCE                =-4.847048E-01
- Non-linearised source for EP    at: KESOURCE                = 3.786519E-01
- pos. sum=0.378652 neg. sum=-0.496551
- nett sum=-0.117899
+ Nett source of EP   at patch named: OB1      (INLE1       ) = 6.747009E-24 (Average  1.386463E-23)
+ Nett source of EP   at patch named: OB2      (OUTL2       ) =-7.304242E-03 (Ave Out  1.500971E-02 In  0.000000E+00)
+ Nett source of EP   at patch named: OB3      (PLAT3       ) =-2.670021E-13
+ Nett source of EP   at patch named: KESOURCE                =-6.598617E-01
+ Non-linearised source for EP    at: KESOURCE                = 5.107031E-01
+ pos. sum=0.510703 neg. sum=-0.667166
+ nett sum=-0.156463
  
  
  ************************************************************
- Summary of sources from all Objects/Patches at sweep  1057
+ Summary of sources from all Objects/Patches at sweep   717
     Variable      Inflow        Outflow       Nett
-       P1       1.946539E+00 -1.946539E+00 -2.220446E-16
-       V1       0.000000E+00 -8.000267E-04 -8.000267E-04
-       W1       1.459904E+00 -2.387251E+00 -9.273468E-01
-       KE       1.202570E-01 -1.235089E-01 -3.251875E-03
-       EP       3.786519E-01 -4.965510E-01 -1.178992E-01
+       P1       4.866346E-01 -4.866346E-01 -2.609024E-15
+       V1       0.000000E+00 -3.576954E-04 -3.576954E-04
+       W1       3.649760E-01 -8.917723E-01 -5.267963E-01
+       KE       7.683629E-02 -7.839800E-02 -1.561715E-03
+       EP       5.107031E-01 -6.671660E-01 -1.564628E-01
  ************************************************************
  
  
  ************************************************************
  spot values vs sweep or iteration number
- IXMON= 1 IYMON= 7 IZMON= 19 TIMESTEP= 1
+ IXMON= 1 IYMON= 13 IZMON= 19 TIMESTEP= 1
  
  Tabulation of abscissa and ordinates...
    ISWP       P1           V1           W1           KE           EP  
       1   0.0000E+00   9.9999E-11   1.0000E-10   1.0000E-10   1.0000E-10
-    151   3.2216E+02  -8.7712E-04   7.9121E-01   1.0000E-10   1.0000E-10
-    301   3.2361E+02  -8.7715E-04   7.9121E-01   1.0000E-10   1.0000E-10
-    451   3.2519E+02  -8.7715E-04   7.9121E-01   1.0000E-10   1.0000E-10
-    601   3.2680E+02  -8.7715E-04   7.9121E-01   1.0000E-10   1.0000E-10
-    751   3.2682E+02  -8.7715E-04   7.9121E-01   1.0000E-10   1.0000E-10
-    901   3.2680E+02  -8.7715E-04   7.9121E-01   1.0000E-10   1.0000E-10
-   1051   3.2680E+02  -8.7715E-04   7.9121E-01   1.0000E-10   1.0000E-10
+    151   7.3310E+02  -1.6157E-04   7.1276E-01   2.8347E-03   1.3704E-02
+    301   7.4971E+02  -1.6158E-04   7.1276E-01   2.8347E-03   1.3704E-02
+    451   7.4813E+02  -1.6158E-04   7.1276E-01   2.8347E-03   1.3704E-02
+    601   7.4821E+02  -1.6158E-04   7.1276E-01   2.8347E-03   1.3704E-02
    Variable    1 = P1     2 = V1     3 = W1     4 = KE     5 = EP  
-     Minval=  0.000E+00 -8.772E-04  1.000E-10  1.000E-10  1.000E-10
-     Maxval=  3.268E+02  1.000E-10  7.912E-01  1.000E-10  1.000E-10
-     Cellav=  2.848E+02 -7.675E-04  6.923E-01  1.000E-10  1.000E-10
- 1.00 2....+.3..+...3+....+3...+...3+....+3...+..3.+....3
+     Minval=  0.000E+00 -1.616E-04  1.000E-10  1.000E-10  1.000E-10
+     Maxval=  7.497E+02  1.000E-10  7.128E-01  2.835E-03  1.370E-02
+     Cellav=  5.958E+02 -1.293E-04  5.702E-01  2.268E-03  1.096E-02
+ 1.00 2....+....+..5.+....+....5....+....+..5.+....+....5
       .                                                 .
  0.90 +                                                 +
       .                                                 .
@@ -458,9 +455,9 @@
       .                                                 .
  0.10 +                                                 +
       .                                                 .
- 0.00 5....+.5..+...5+....+5...+...5+....+5...+..5.+....5
+ 0.00 5....+....+..2.+....+....2....+....+..2.+....+....2
       0   .1   .2   .3   .4   .5   .6   .7   .8   .9  1.0
- the abscissa is      ISWP.  min= 1.00E+00 max= 1.05E+03
+ the abscissa is      ISWP.  min= 1.00E+00 max= 6.01E+02
  
  ************************************************************
  
@@ -469,47 +466,44 @@
  
  Tabulation of abscissa and ordinates...
    ISWP       P1           V1           W1           KE           EP  
-      1   1.1000E+00   1.7927E-10   5.7030E-01   3.2387E-09   6.0734E-09
-    151   3.1431E-07   2.5758E-04   1.1003E-01   4.2458E-02   1.1030E-02
-    301   3.4526E-08   1.5315E-04   1.4273E-02   1.7472E-02   3.5263E-03
-    451   2.0997E-08   5.4214E-05   6.2373E-03   2.5569E-03   8.5995E-04
-    601   4.8502E-09   2.1672E-05   1.0647E-03   7.0633E-04   1.5322E-04
-    751   1.8801E-09   6.3134E-06   2.7826E-04   8.7271E-05   2.5131E-05
-    901   4.9479E-10   1.7549E-06   6.0484E-05   1.7099E-05   5.1145E-06
-   1051   1.8534E-10   4.3345E-07   1.0439E-05   2.4878E-06   7.5974E-07
+      1   1.1000E+00   4.6555E-11   2.4913E-01   8.0968E-10   1.5183E-09
+    151   7.3647E-08   1.2537E-04   2.8541E-02   2.0956E-02   4.4968E-03
+    301   1.1259E-08   2.2088E-05   3.8004E-03   1.8776E-03   3.9405E-04
+    451   1.2569E-09   3.7593E-06   3.7752E-04   1.5008E-04   3.3375E-05
+    601   1.4440E-10   6.4262E-07   4.3798E-05   1.3511E-05   3.4162E-06
    Variable    1 = P1     2 = V1     3 = W1     4 = KE     5 = EP  
-     Minval= -2.241E+01 -2.244E+01 -1.147E+01 -1.955E+01 -1.892E+01
-     Maxval=  9.531E-02 -8.264E+00 -5.616E-01 -3.159E+00 -4.507E+00
- 1.00 3....+.5..+....+....+....+....+....+....+....+....+
-      .             4                                   .
- 0.90 +             5      2                            +
-      .      3             4       2                    .
- 0.80 +                    5                            +
-      .                            4      2             .
- 0.70 +                            5                    +
-      .             3                            2      .
- 0.60 +                    3              5             +
-      .                                                 2
- 0.50 +                                          4      +
-      .                                          5      .
- 0.40 +                            3                    4
-      .      1                                          5
- 0.30 +                                   3             +
-      .             1                                   .
- 0.20 +                    1                            +
-      .                            1             3      .
- 0.10 +                                   1             +
-      .                                          1      .
+     Minval= -2.266E+01 -2.379E+01 -1.004E+01 -2.093E+01 -2.031E+01
+     Maxval=  9.531E-02 -8.984E+00 -1.390E+00 -3.865E+00 -5.404E+00
+ 1.00 3....+....+..5.+....+....+....+....+....+....+....+
+      .                                                 .
+ 0.90 +                        2                        +
+      .                        5                        .
+ 0.80 +                                                 +
+      .            3                        2           .
+ 0.70 +                                     4           +
+      .                                     5           2
+ 0.60 +                                                 +
+      .                                                 4
+ 0.50 +                        3                        5
+      .                                                 .
+ 0.40 +                                                 +
+      .                                                 .
+ 0.30 +                                                 +
+      .            1                        3           .
+ 0.20 +                        1                        +
+      .                                                 .
+ 0.10 +                                     1           +
+      .                                                 .
  0.00 5....+....+....+....+....+....+....+....+....+....3
       0   .1   .2   .3   .4   .5   .6   .7   .8   .9  1.0
- the abscissa is      ISWP.  min= 1.00E+00 max= 1.05E+03
+ the abscissa is      ISWP.  min= 1.00E+00 max= 6.01E+02
  
  ************************************************************
  
  ************************************************************
   Patch-wise Printout from GXYPLS
 Variable= Sk.Fr.Co, at patch named: OB3      and  IX=     1
- IY=    15  3.335E-03  3.574E-03  3.560E-03  3.549E-03  3.551E-03
+ IY=    15  4.011E-03  4.299E-03  4.291E-03  4.291E-03  4.291E-03
  IZ=          1         61        121        181        241
  
  ************************************************************
@@ -517,9 +511,9 @@ Variable= Sk.Fr.Co, at patch named: OB3      and  IX=     1
  
  ************************************************************
  SATLIT RUN NUMBER =   1 ; LIBRARY REF.=    0
- Run started at 08:10:02 on Friday, 21 November 2025                           
- Run completed at 08:10:27 on Friday, 21 November 2025                         
- CPU time of run 26 s
- This includes 26 seconds of user time and 0 seconds of system time.
- TIME/(VARIABLES*CELLS*TSTEPS*SWEEPS*ITS) = 1.093E-06
+ Run started at 08:39:29 on Friday, 21 November 2025                           
+ Run completed at 08:39:46 on Friday, 21 November 2025                         
+ CPU time of run 18 s
+ This includes 18 seconds of user time and 0 seconds of system time.
+ TIME/(VARIABLES*CELLS*TSTEPS*SWEEPS*ITS) = 1.116E-06
  ************************************************************
