@@ -32,8 +32,8 @@
  ************************************************************
  
  Number of F-array locations available is                  10000000
- Number used before BFC allowance is                         214353
- Number used after BFC allowance is                          214353
+ Number used before BFC allowance is                         223379
+ Number used after BFC allowance is                          223379
  ************************************************************
  
   Standard k-e model constants
@@ -110,9 +110,10 @@
  ONEPHS = T
  NAME(1)=P1 ;NAME(5)=V1
  NAME(7)=W1 ;NAME(12)=KE
- NAME(13)=EP ;NAME(146)=YPLS
- NAME(147)=STRS ;NAME(148)=DEN1
- NAME(149)=EPKE ;NAME(150)=DWDY
+ NAME(13)=EP ;NAME(145)=ENUT
+ NAME(146)=YPLS ;NAME(147)=STRS
+ NAME(148)=DEN1 ;NAME(149)=EPKE
+ NAME(150)=DWDY
     * Y in SOLUTN argument list denotes:
     * 1-stored 2-solved 3-whole-field
     * 4-point-by-point 5-explicit 6-harmonic averaging 
@@ -121,12 +122,14 @@
  SOLUTN(W1,Y,Y,Y,N,N,N)
  SOLUTN(KE,Y,Y,N,N,N,N)
  SOLUTN(EP,Y,Y,N,N,N,N)
+ SOLUTN(ENUT,Y,N,N,N,N,Y)
  SOLUTN(YPLS,Y,N,N,N,N,Y)
  SOLUTN(STRS,Y,N,N,N,N,Y)
  SOLUTN(DEN1,Y,N,N,N,N,Y)
  SOLUTN(EPKE,Y,N,N,N,N,Y)
  SOLUTN(DWDY,Y,N,N,N,N,Y)
  DEN1 = 148
+ VIST = 145
  ************************************************************
   Group 8. Terms & Devices
     * Y in TERMS argument list denotes:
@@ -164,9 +167,10 @@
   Group 11.Initial field variables (PHIs)
  FIINIT(P1)=0. ;FIINIT(V1)=1.0E-10
  FIINIT(W1)=1.0E-10 ;FIINIT(KE)=5.625E-17
- FIINIT(EP)=6.932316E-24 ;FIINIT(YPLS)=1.0E-10
- FIINIT(STRS)=1.0E-10 ;FIINIT(DEN1)=998.23
- FIINIT(EPKE)=1.0E-10 ;FIINIT(DWDY)=1.0E-10
+ FIINIT(EP)=6.932316E-24 ;FIINIT(ENUT)=1.0E-10
+ FIINIT(YPLS)=1.0E-10 ;FIINIT(STRS)=1.0E-10
+ FIINIT(DEN1)=998.23 ;FIINIT(EPKE)=1.0E-10
+ FIINIT(DWDY)=1.0E-10
    No PATCHes yet used for this Group
  INIADD = F
  FSWEEP = 1
@@ -229,6 +233,7 @@
  RELAX(W1,LINRLX,0.5)
  RELAX(KE,LINRLX,0.5)
  RELAX(EP,LINRLX,0.5)
+ RELAX(ENUT,LINRLX,0.5)
  RELAX(YPLS,LINRLX,1.)
  RELAX(STRS,LINRLX,1.)
  RELAX(DEN1,LINRLX,0.5)
@@ -244,6 +249,7 @@
  VARMAX(W1)=1.0E+06 ;VARMIN(W1)=-1.0E+06
  VARMAX(KE)=1.0E+10 ;VARMIN(KE)=1.0E-10
  VARMAX(EP)=1.0E+10 ;VARMIN(EP)=1.0E-10
+ VARMAX(ENUT)=1.0E+10 ;VARMIN(ENUT)=1.0E-10
  VARMAX(YPLS)=1.0E+10 ;VARMIN(YPLS)=-1.0E+10
  VARMAX(STRS)=1.0E+10 ;VARMIN(STRS)=-1.0E+10
  VARMAX(DEN1)=1.0E+10 ;VARMIN(DEN1)=1.0E-06
@@ -279,6 +285,7 @@
  OUTPUT(W1,N,N,Y,Y,Y,Y)
  OUTPUT(KE,N,N,Y,Y,Y,Y)
  OUTPUT(EP,N,N,Y,Y,Y,Y)
+ OUTPUT(ENUT,N,N,Y,N,N,N)
  OUTPUT(YPLS,N,N,Y,N,N,N)
  OUTPUT(STRS,N,N,Y,N,N,N)
  OUTPUT(DEN1,N,N,Y,N,N,N)
@@ -328,7 +335,7 @@
     5.000E-02   3.050E+00   6.050E+00   9.050E+00   1.205E+01
 
  
- Total number of F-array elements used is                    216840
+ Total number of F-array elements used is                    225866
  --- INTEGRATION OF EQUATIONS BEGINS ---
  
  ************************************************************
@@ -342,20 +349,20 @@
  with resref values determined by EARTH
  & resfac=1.0E-05
   variable   resref  (res sum)/resref  (res sum)
-     P1     3.969E+00   1.787E-10      7.093E-10
-     V1     4.188E+00   4.125E-07      1.727E-06
-     W1     4.188E+00   9.669E-06      4.049E-05
-     KE     2.456E-01   2.308E-06      5.669E-07
-     EP     8.908E-01   7.029E-07      6.261E-07
+     P1     3.969E+00   1.779E-10      7.060E-10
+     V1     4.188E+00   4.096E-07      1.715E-06
+     W1     4.188E+00   9.621E-06      4.029E-05
+     KE     2.456E-01   2.292E-06      5.628E-07
+     EP     8.908E-01   6.985E-07      6.222E-07
  
  max abs corrections for solved-for variables
  for comparison with maximum & minimum values
   variable   max-cor      high           low     (   IX    IY    IZ)
-     P1     2.849E-05   3.582E+02      5.783E-01 (    1,   15,  279)
-     V1     1.649E-08   9.818E-04     -2.096E-03 (    1,    7,  277)
-     W1     8.662E-07   9.165E-01      5.583E-01 (    1,    1,  299)
-     KE     1.198E-08   6.012E-03      1.000E-10 (    1,    7,  272)
-     EP     1.455E-08   5.604E-02      1.000E-10 (    1,   11,  300)
+     P1     2.855E-05   3.582E+02      5.783E-01 (    1,   15,  279)
+     V1     1.641E-08   9.818E-04     -2.096E-03 (    1,    7,  277)
+     W1     8.650E-07   9.165E-01      5.583E-01 (    1,    1,  299)
+     KE     1.189E-08   6.012E-03      1.000E-10 (    1,    7,  272)
+     EP     1.454E-08   5.604E-02      1.000E-10 (    1,   11,  300)
  
  
  ************************************************************
@@ -370,9 +377,9 @@
         R1       - Mass   - kg/s
         TEM1,H1  - Energy - Watts
  
- Nett source of V1   at patch named: OB2      (OUTL2       ) =-8.000318E-04
- pos. sum=0. neg. sum=-8.000318E-04
- nett sum=-8.000318E-04
+ Nett source of V1   at patch named: OB2      (OUTL2       ) =-8.000267E-04
+ pos. sum=0. neg. sum=-8.000267E-04
+ nett sum=-8.000267E-04
  
  Nett source of W1   at patch named: OB1      (INLE1       ) = 1.459904E+00
  Nett source of W1   at patch named: OB2      (OUTL2       ) =-1.480871E+00
@@ -383,19 +390,19 @@
  Nett source of R1   at patch named: OB1      (INLE1       ) = 1.946539E+00
  Nett source of R1   at patch named: OB2      (OUTL2       ) =-1.946539E+00 (Mass Out -1.946539E+00 In 0.000000E+00)
  pos. sum=1.946539 neg. sum=-1.946539
- nett sum=0.
+ nett sum=-2.220446E-16
  
  Nett source of KE   at patch named: OB1      (INLE1       ) = 1.094928E-16 (Average  5.625000E-17)
- Nett source of KE   at patch named: OB2      (OUTL2       ) =-5.246442E-03 (Ave Out  2.695270E-03 In  0.000000E+00)
- Nett source of KE   at patch named: OB3      (PLAT3       ) =-1.437060E-14
- Nett source of KE   at patch named: KESOURCE                =-1.182625E-01
+ Nett source of KE   at patch named: OB2      (OUTL2       ) =-5.246435E-03 (Ave Out  2.695266E-03 In  0.000000E+00)
+ Nett source of KE   at patch named: OB3      (PLAT3       ) =-1.438712E-14
+ Nett source of KE   at patch named: KESOURCE                =-1.182624E-01
  Non-linearised source for KE    at: KESOURCE                = 1.202570E-01
  pos. sum=0.120257 neg. sum=-0.123509
- nett sum=-3.251877E-03
+ nett sum=-3.251875E-03
  
  Nett source of EP   at patch named: OB1      (INLE1       ) = 1.349402E-23 (Average  6.932316E-24)
- Nett source of EP   at patch named: OB2      (OUTL2       ) =-1.184624E-02 (Ave Out  6.085800E-03 In  0.000000E+00)
- Nett source of EP   at patch named: OB3      (PLAT3       ) =-1.639882E-13
+ Nett source of EP   at patch named: OB2      (OUTL2       ) =-1.184623E-02 (Ave Out  6.085796E-03 In  0.000000E+00)
+ Nett source of EP   at patch named: OB3      (PLAT3       ) =-1.641660E-13
  Nett source of EP   at patch named: KESOURCE                =-4.847048E-01
  Non-linearised source for EP    at: KESOURCE                = 3.786519E-01
  pos. sum=0.378652 neg. sum=-0.496551
@@ -405,11 +412,11 @@
  ************************************************************
  Summary of sources from all Objects/Patches at sweep  1057
     Variable      Inflow        Outflow       Nett
-       P1       1.946539E+00 -1.946539E+00  0.000000E+00
-       V1       0.000000E+00 -8.000318E-04 -8.000318E-04
-       W1       1.459904E+00 -2.387251E+00 -9.273467E-01
-       KE       1.202570E-01 -1.235089E-01 -3.251877E-03
-       EP       3.786519E-01 -4.965511E-01 -1.178992E-01
+       P1       1.946539E+00 -1.946539E+00 -2.220446E-16
+       V1       0.000000E+00 -8.000267E-04 -8.000267E-04
+       W1       1.459904E+00 -2.387251E+00 -9.273468E-01
+       KE       1.202570E-01 -1.235089E-01 -3.251875E-03
+       EP       3.786519E-01 -4.965510E-01 -1.178992E-01
  ************************************************************
  
  
@@ -420,9 +427,9 @@
  Tabulation of abscissa and ordinates...
    ISWP       P1           V1           W1           KE           EP  
       1   0.0000E+00   9.9999E-11   1.0000E-10   1.0000E-10   1.0000E-10
-    151   3.2218E+02  -8.7712E-04   7.9121E-01   1.0000E-10   1.0000E-10
+    151   3.2216E+02  -8.7712E-04   7.9121E-01   1.0000E-10   1.0000E-10
     301   3.2361E+02  -8.7715E-04   7.9121E-01   1.0000E-10   1.0000E-10
-    451   3.2520E+02  -8.7715E-04   7.9121E-01   1.0000E-10   1.0000E-10
+    451   3.2519E+02  -8.7715E-04   7.9121E-01   1.0000E-10   1.0000E-10
     601   3.2680E+02  -8.7715E-04   7.9121E-01   1.0000E-10   1.0000E-10
     751   3.2682E+02  -8.7715E-04   7.9121E-01   1.0000E-10   1.0000E-10
     901   3.2680E+02  -8.7715E-04   7.9121E-01   1.0000E-10   1.0000E-10
@@ -463,16 +470,16 @@
  Tabulation of abscissa and ordinates...
    ISWP       P1           V1           W1           KE           EP  
       1   1.1000E+00   1.7927E-10   5.7030E-01   3.2387E-09   6.0734E-09
-    151   3.1360E-07   2.5745E-04   1.0980E-01   4.2497E-02   1.1026E-02
-    301   3.4428E-08   1.5311E-04   1.4238E-02   1.7454E-02   3.5242E-03
-    451   2.0880E-08   5.4236E-05   6.2131E-03   2.5446E-03   8.5545E-04
-    601   4.8094E-09   2.1676E-05   1.0617E-03   7.0500E-04   1.5315E-04
-    751   1.8723E-09   6.3262E-06   2.7788E-04   8.7262E-05   2.5094E-05
-    901   4.9578E-10   1.7618E-06   6.0611E-05   1.7125E-05   5.1228E-06
-   1051   1.8620E-10   4.3646E-07   1.0490E-05   2.5051E-06   7.6431E-07
+    151   3.1431E-07   2.5758E-04   1.1003E-01   4.2458E-02   1.1030E-02
+    301   3.4526E-08   1.5315E-04   1.4273E-02   1.7472E-02   3.5263E-03
+    451   2.0997E-08   5.4214E-05   6.2373E-03   2.5569E-03   8.5995E-04
+    601   4.8502E-09   2.1672E-05   1.0647E-03   7.0633E-04   1.5322E-04
+    751   1.8801E-09   6.3134E-06   2.7826E-04   8.7271E-05   2.5131E-05
+    901   4.9479E-10   1.7549E-06   6.0484E-05   1.7099E-05   5.1145E-06
+   1051   1.8534E-10   4.3345E-07   1.0439E-05   2.4878E-06   7.5974E-07
    Variable    1 = P1     2 = V1     3 = W1     4 = KE     5 = EP  
-     Minval= -2.240E+01 -2.244E+01 -1.147E+01 -1.955E+01 -1.892E+01
-     Maxval=  9.531E-02 -8.265E+00 -5.616E-01 -3.158E+00 -4.507E+00
+     Minval= -2.241E+01 -2.244E+01 -1.147E+01 -1.955E+01 -1.892E+01
+     Maxval=  9.531E-02 -8.264E+00 -5.616E-01 -3.159E+00 -4.507E+00
  1.00 3....+.5..+....+....+....+....+....+....+....+....+
       .             4                                   .
  0.90 +             5      2                            +
@@ -510,8 +517,8 @@ Variable= Sk.Fr.Co, at patch named: OB3      and  IX=     1
  
  ************************************************************
  SATLIT RUN NUMBER =   1 ; LIBRARY REF.=    0
- Run started at 07:43:54 on Friday, 21 November 2025                           
- Run completed at 07:44:19 on Friday, 21 November 2025                         
+ Run started at 08:10:02 on Friday, 21 November 2025                           
+ Run completed at 08:10:27 on Friday, 21 November 2025                         
  CPU time of run 26 s
  This includes 26 seconds of user time and 0 seconds of system time.
  TIME/(VARIABLES*CELLS*TSTEPS*SWEEPS*ITS) = 1.093E-06
