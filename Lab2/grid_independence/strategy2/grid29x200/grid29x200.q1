@@ -18,7 +18,7 @@
  ************************************************************
   Groups 3, 4, 5  Grid Information
     * Overall number of cells, RSET(M,NX,NY,NZ,tolerance)
- RSET(M,1,30,401)
+ RSET(M,1,30,200)
     * Cylindrical-polar grid
  CARTES=F
  ************************************************************
@@ -97,7 +97,7 @@
   Group 21. Print-out of Variables
  ************************************************************
   Group 22. Monitor Print-Out
- IXMON = 1 ;IYMON = 27 ;IZMON = 203
+ IXMON = 1 ;IYMON = 27 ;IZMON = 197
  NPRMON = 100000
  NPRMNT = 1
  TSTSWP = -1
@@ -110,21 +110,20 @@
  ************************************************************
   Group 24. Dumps For Restarts
  
- GVIEW(P,-0.940355,0.01761,-0.33974)
- GVIEW(UP,-4.965884E-03,0.997843,0.065466)
+ GVIEW(P,-0.798287,0.123381,-0.589507)
+ GVIEW(UP,0.102548,0.992344,0.068826)
  GVIEW(WINDOW,MAX)
- GVIEW(VDIS,0.059469)
- GVIEW(CENTRE,0.010605,0.039864,2.84)
+ GVIEW(VDIS,0.132099)
+ GVIEW(CENTRE,0.011354,0.042682,7.874627)
  
 > DOM,    SIZE,        5.200000E-01, 5.000000E-02, 8.000000E+00
-> DOM,    MONIT,       2.600000E-01, 4.375000E-02, 8.900000E-01
+> DOM,    MONIT,       2.600000E-01, 4.416636E-02, 7.874627E+00
 > DOM,    SCALE,       1.000000E+00, 1.000000E+00, 1.000000E+00
 > DOM,    INCREMENT,   1.000000E-02, 1.000000E-02, 1.000000E-02
 > GRID,   RSET_X_1,      1, 1.000000E+00
 > GRID,   RSET_Y_1,     29, 1.000000E+00
 > GRID,   RSET_Y_2,      1, 1.000000E+00
 > GRID,   RSET_Z_1,    200, 1.000000E+00
-  > GRID,   RSET_Z_2,    201, 1.000000E+00
 > DOM,    INI_AMB,    YES
 > DOM,    INI_BUOY,   YES
  
@@ -157,8 +156,8 @@
 > OBJ,    WALL_CO,      LOG-LAW
  
 > OBJ,    NAME,        NULL4
-> OBJ,    POSITION,    0.000000E+00, 0.000000E+00, 0.000000E+00
-> OBJ,    SIZE,        5.200000E-01, 4.833300E-02, 8.000000E-01
+> OBJ,    POSITION,    0.000000E+00, AT_START,     AT_START
+> OBJ,    SIZE,        TO_END,       4.833300E-02, TO_END
 > OBJ,    DOMCLIP,     NO
 > OBJ,    GEOMETRY,    polwire
 > OBJ,    TYPE,        NULL
